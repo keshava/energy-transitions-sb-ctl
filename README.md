@@ -4,7 +4,7 @@ Official API for Shell SDU Sandbox Control, accessible using a command line tool
 
 Beta release - Shell reserves the right to modify the API functionality currently offered.
 
-IMPORTANT: Competitions requests using an API version prior to 1.0.0 may not work.  If you are encountering difficulties with requests, please check your version with `sdusbctl --version`.  If it is below 1.0.0, please update with `pip install sdusbctl --upgrade`.
+IMPORTANT: Sandbox requests using an API version prior to 1.0.0 may not work.  If you are encountering difficulties with requests, please check your version with `sdusbctl --version`.  If it is below 1.0.0, please update with `pip install sdusbctl --upgrade`.
 
 ## Installation
 
@@ -124,7 +124,7 @@ usage: sdusbctl sandboxes download [-h] [-f FILE_NAME] [-p PATH] [-w] [-o]
 
 optional arguments:
   -h, --help            show this help message and exit
-  sandbox           Competition URL suffix (use "sdusbctl sandboxes list" to show options)
+  sandbox               sandbox URL suffix (use "sdusbctl sandboxes list" to show options)
                         If empty, the default sandbox will be used (use "sdusbctl config set sandbox")"
   -f FILE_NAME, --file FILE_NAME
                         File name, all files downloaded if not provided
@@ -157,7 +157,7 @@ required arguments:
 
 optional arguments:
   -h, --help            show this help message and exit
-  sandbox           Competition URL suffix (use "sdusbctl sandboxes list" to show options)
+  sandbox               sandbox URL suffix (use "sdusbctl sandboxes list" to show options)
                         If empty, the default sandbox will be used (use "sdusbctl config set sandbox")"
   -q, --quiet           Suppress printing information about the upload/download progress
 ```
@@ -175,7 +175,7 @@ usage: sdusbctl sandboxes requests [-h] [-v] [-q] [sandbox]
 
 optional arguments:
   -h, --help   show this help message and exit
-  sandbox  Competition URL suffix (use "sdusbctl sandboxes list" to show options)
+  sandbox      sandbox URL suffix (use "sdusbctl sandboxes list" to show options)
                If empty, the default sandbox will be used (use "sdusbctl config set sandbox")"
   -v, --csv    Print results in CSV format (if not set print in table format)
   -q, --quiet  Suppress printing information about the upload/download progress
@@ -195,7 +195,7 @@ usage: sdusbctl sandboxes chargeboard [-h] [-s] [-d] [-p PATH] [-v] [-q]
 
 optional arguments:
   -h, --help            show this help message and exit
-  sandbox           Competition URL suffix (use "sdusbctl sandboxes list" to show options)
+  sandbox               sandbox URL suffix (use "sdusbctl sandboxes list" to show options)
                         If empty, the default sandbox will be used (use "sdusbctl config set sandbox")"
   -s, --show            Show the top of the chargeboard
   -d, --download        Download entire chargeboard
@@ -272,7 +272,7 @@ optional arguments:
 
 Example:
 
-`sdusbctl datasets files zillow/zecon`
+`sdusbctl datasets files oklahoma/shale`
 
 ##### Download dataset files
 
@@ -297,9 +297,9 @@ optional arguments:
 
 Examples:
 
-`sdusbctl datasets download zillow/zecon`
+`sdusbctl datasets download oklahoma/shale`
 
-`sdusbctl datasets download zillow/zecon -f State_time_series.csv`
+`sdusbctl datasets download oklahoma/shale -f shale_time_series.csv`
 
 Please note that BigQuery datasets cannot be downloaded.
 
@@ -451,7 +451,7 @@ optional arguments:
 
 Example:
 
-`sdusbctl kernels list -s titanic`
+`sdusbctl kernels list -s production-forecasting`
 
 `sdusbctl kernels list --language python`
 
@@ -518,7 +518,7 @@ optional arguments:
 
 Example:
 
-`sdusbctl kernels output keshava/exploring-dl-on-shale-data -p /path/to/dest`
+`sdusbctl kernels output keshava/dl-on-shale-data -p /path/to/dest`
 
 ##### Get the status of the latest kernel run
 
@@ -532,7 +532,7 @@ optional arguments:
 
 Example:
 
-`sdusbctl kernels status keshava/exploring-dl-on-shale-data`
+`sdusbctl kernels status keshava/dl-on-shale-data`
 
 ### Config
 
@@ -596,7 +596,7 @@ required arguments:
 
 Example:
 
-`sdusbctl config set -n sandbox -v titanic`
+`sdusbctl config set -n sandbox -v production-forecasting`
 
 
 ##### Clear a configuration value
