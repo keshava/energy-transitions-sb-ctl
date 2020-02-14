@@ -70,8 +70,8 @@ commands:
     list                List available sandboxes
     files               List sandbox files
     download            Download sandbox files
-    request              Make a new sandbox request
-    requests         Show your sandbox requests
+    request             Make a new sandbox request
+    requests            Show your sandbox requests
     chargeboard         Get sandbox chargeboard information
 ```
 
@@ -105,7 +105,7 @@ usage: sdusbctl sandboxes files [-h] [-v] [-q] [sandbox]
 
 optional arguments:
   -h, --help   show this help message and exit
-  sandbox  Competition URL suffix (use "sdusbctl sandboxes list" to show options)
+  sandbox      sandbox URL suffix (use "sdusbctl sandboxes list" to show options)
                If empty, the default sandbox will be used (use "sdusbctl config set sandbox")"
   -v, --csv    Print results in CSV format (if not set print in table format)
   -q, --quiet  Suppress printing information about the upload/download progress
